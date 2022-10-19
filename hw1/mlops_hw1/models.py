@@ -51,7 +51,7 @@ class Model():
             except Exception as e:
                 raise ModelInternalError(
                     message=
-                    f"Problem while initializing model! Error:\n{getattr(e, "message", repr(e))}"
+                    f"Problem while initializing model! Error:\n{getattr(e, 'message', repr(e))}"
                 )
         elif model_type == "logreg":
             try:
@@ -61,7 +61,7 @@ class Model():
             except Exception as e:
                 raise ModelInternalError(
                     message=
-                    f"Problem while initializing model! Error:\n{getattr(e, "message", repr(e))}"
+                    f"Problem while initializing model! Error:\n{getattr(e, 'message', repr(e))}"
                 )
         else:
             raise ModelInternalError(
@@ -82,7 +82,7 @@ class Model():
             except Exception as e:
                 raise ModelInternalError(
                     message=
-                    f"Problem while predicting! Error:\n{getattr(e, "message", repr(e))}"
+                    f"Problem while predicting! Error:\n{getattr(e, 'message', repr(e))}"
                 )
         else:
             raise ModelInternalError(message="Model is not trained!")
