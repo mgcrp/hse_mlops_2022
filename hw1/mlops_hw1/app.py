@@ -3,7 +3,7 @@ from flask_restx import Resource, Api, reqparse, fields
 from models import Model
 
 MAX_MODEL_NUM = 10
-DATA_PATH = "data/winequality-white.csv"
+DATA_PATH = "mlops_hw1/data/winequality-white.csv"
 MODELS_DICT = dict()
 
 app = Flask(__name__)
