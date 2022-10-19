@@ -42,5 +42,5 @@
 2) Ставим зависимости - `poetry install`
 3) Запускаем приложение - `poetry run python mlops_hw1/grpc/app.py`
 4) Я заранее написал тесты, которые проверяют все методы. Для тестирования в новом терминале:
-  * Переходим в директорию hw1
-  * Запускаем тесты - `poetry run python mlops_hw1/grpc/client.py`
+    * Переходим в директорию hw1
+    * Запускаем тесты - `poetry run python mlops_hw1/grpc/client.py`
