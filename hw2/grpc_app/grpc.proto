@@ -1,0 +1,66 @@
+message ModelAddRequest {
+  required string name=1;
+  required ModelType type=2;
+  required string params=3;
+}
+
+message ModelSimpleRequest {
+  required string name=1;
+}
+
+message ModelPredictRequest {
+  required string name=1;
+  required float fixed_acidity=2;
+  required float volatile_acidity=3;
+  required float citric_acid=4;
+  required float residual_sugar=5;
+  required float chlorides=6;
+  required float free_sulfur_dioxide=7;
+  required float density=8;
+  required float pH=9;
+  required float sulphates=10;
+  required float alcohol=11;
+}
+
+message Empty {
+
+}
+
+message ModelSimpleResponse {
+  required ModelMessageType status=1;
+  required string message=2;
+}
+
+message ModelPredictResponse {
+  required float result=1;
+}
+
+message ModelListResponse {
+  repeated ModelDescription models=1;
+}
+
+message ModelDescription {
+  required string name=1;
+  required ModelType type=2;
+  required bool isTrained=3;
+  optional float train_accuracy=4;
+  optional float validation_accuracy=5;
+}
+
+enum ModelType {
+  logreg=0;
+  xgboost=1;
+}
+
+enum ModelMessageType {
+  OK=0;
+  Failed=1;
+}
+
+service Model {
+  rpc ModelList(Empty) returns (ModelListResponse) {}
+  rpc ModelAdd(ModelAddRequest) returns (ModelSimpleRequest) {}
+  rpc ModelRemove(ModelSimpleRequest) returns (ModelSimpleResponse) {}
+  rpc ModelTrain(ModelSimpleRequest) returns (ModelSimpleResponse) {}
+  rpc ModelPredict(ModelPredictRequest) returns (ModelPredictResponse) {}
+}
