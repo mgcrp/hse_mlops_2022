@@ -77,6 +77,9 @@ def test_data(mocker, fixture_testData):
     __model = Model("logreg")
     __model = Model("xgboost")
 
+    with pytest.raises(ModelInternalError, match="Model type must be 'xgboost' or 'logreg'! kek got."):
+        __model = Model("kek")
+
 # 2 - Тестируем действия с необученной моделью
 def test_untrained(mocker, fixture_testData):
     def get_copy():
