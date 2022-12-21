@@ -10,7 +10,6 @@ import pandas as pd
 
 import models
 from models import Model, ModelDataError, ModelInternalError
-from copy import copy
 
 # ---------- ПЕРЕМЕННЫЕ/КОНСТАНТЫ ----------
 
