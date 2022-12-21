@@ -114,8 +114,8 @@ def test_trained(mocker, fixture_testData):
     assert __model.score()["train_accuracy"] >= 0, "Wrong SCORE.train_accuracy < 0"
     assert __model.score()["train_accuracy"] <= 1, "Wrong SCORE.train_accuracy > 1"
     assert isinstance(__model.score()["validation_accuracy"], float), "Wrong SCORE.validation_accuracy data type"
-    assert __model.score()["validation_accuracy"] >= 0, "Wrong SCORE.train_accuracy < 0"
-    assert __model.score()["validation_accuracy"] <= 1, "Wrong SCORE.train_accuracy > 1"
+    assert __model.score()["validation_accuracy"] >= 0, "Wrong SCORE.validation_accuracy < 0"
+    assert __model.score()["validation_accuracy"] <= 1, "Wrong SCORE.validation_accuracy > 1"
 
 
     __model = Model("xgboost")
@@ -127,5 +127,5 @@ def test_trained(mocker, fixture_testData):
     assert __model.score()["train_accuracy"] >= 0, "Wrong SCORE.train_accuracy < 0"
     assert __model.score()["train_accuracy"] <= 1, "Wrong SCORE.train_accuracy > 1"
     assert isinstance(__model.score()["validation_accuracy"], float), "Wrong SCORE.validation_accuracy data type"
-    assert __model.score()["validation_accuracy"] >= 0, "Wrong SCORE.train_accuracy < 0"
-    assert __model.score()["validation_accuracy"] <= 1, "Wrong SCORE.train_accuracy > 1"
+    assert __model.score()["validation_accuracy"] >= 0, "Wrong SCORE.validation_accuracy < 0"
+    assert __model.score()["validation_accuracy"] <= 1, "Wrong SCORE.validation_accuracy > 1"
