@@ -95,7 +95,7 @@ def test_untrained(mocker, fixture_testData):
         __model.score()
         __model.predict(TEST_PREDICT)
 
-# 2 - Тестируем что обученная модель адекватит
+# 3 - Тестируем что обученная модель адекватит
 def test_trained(mocker, fixture_testData):
     def get_copy():
         return fixture_testData.copy()
